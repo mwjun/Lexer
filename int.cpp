@@ -1,0 +1,1 @@
+# integer token fsm class
