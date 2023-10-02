@@ -66,7 +66,7 @@ Token scanIdentifier() {
         lexeme += current_char;
         file.get(current_char);
     }
-    
+
     // Check if the lexeme matches any of the keywords
     if (lexeme == "while") {
         return { TokenType::KEYWORD, lexeme }; // Recognized as a keyword
@@ -163,6 +163,7 @@ public:
 int main() {
     // Create a lexer with the input file "source_code.txt"
     Lexer lexer("source_code.txt");
+    std::ofstream output_file("output.txt");
 
     // Declare a Token variable to store the current token
     Token token;
@@ -182,6 +183,8 @@ int main() {
 
         // Print the token type and lexeme in the specified format
         std::cout << tokenTypeToString(token.type) << " " << token.lexeme << std::endl;
+        output_file << tokenTypeToString(token.type) << " " << token.lexeme << std::endl;
+
     }
 
     // Return 0 to indicate successful execution
