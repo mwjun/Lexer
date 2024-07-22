@@ -1,0 +1,13 @@
+[* Test Case Ex 2 *]
+
+#
+integer i, max, product; 
+product = 1;
+i = 1;
+get (max);
+while (i <= max)
+product = product * i; 
+i = i + 1;
+
+put (product);
+#
